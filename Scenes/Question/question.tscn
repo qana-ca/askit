@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=3 uid="uid://g0jj10c5cle3"]
+
+[ext_resource type="Script" path="res://Scenes/Question/question.gd" id="1_mb4qb"]
+[ext_resource type="Texture2D" uid="uid://dxcnuu8b5ks86" path="res://Backgrounds/Green.png" id="2_j2rdm"]
+[ext_resource type="FontFile" uid="uid://brd03uum54nk1" path="res://Fonts/NineteenEightySeven-MzMJ.ttf" id="3_pc6b8"]
+
+[node name="Question" type="Node"]
+script = ExtResource("1_mb4qb")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_j2rdm")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -280.5
+offset_top = 112.0
+offset_right = 280.5
+offset_bottom = 211.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_pc6b8")
+theme_override_font_sizes/font_size = 32
+text = "Вопрос:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Question" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -280.5
+offset_top = 232.0
+offset_right = 280.5
+offset_bottom = 331.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_pc6b8")
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FirstAnswer" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 301.0
+offset_top = 629.0
+offset_right = 877.0
+offset_bottom = 817.0
+
+[node name="SecondAnswer" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 1085.0
+offset_top = 629.0
+offset_right = 1661.0
+offset_bottom = 817.0
+
+[node name="RightAnswersCount" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.245
+anchor_top = 0.29
+anchor_right = 0.245
+anchor_bottom = 0.29
+offset_left = 12.6
+offset_top = -42.2
+offset_right = 213.6
+offset_bottom = 32.8
+
+[node name="WrongAnswersCount" type="Label" parent="."]
+offset_left = 1298.0
+offset_top = 289.0
+offset_right = 1511.0
+offset_bottom = 358.0
+
+[connection signal="pressed" from="FirstAnswer" to="." method="_on_first_answer_pressed"]
+[connection signal="pressed" from="SecondAnswer" to="." method="_on_second_answer_pressed"]
