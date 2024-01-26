@@ -1,20 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://vss611e7w2xu"]
+[gd_scene load_steps=3 format=3 uid="uid://vss611e7w2xu"]
 
-[ext_resource type="Texture2D" uid="uid://dxcnuu8b5ks86" path="res://Backgrounds/Green.png" id="1_7qopn"]
 [ext_resource type="FontFile" uid="uid://brd03uum54nk1" path="res://Fonts/NineteenEightySeven-MzMJ.ttf" id="2_u3hjt"]
 [ext_resource type="Script" path="res://Scenes/MainMenu/button.gd" id="3_68dne"]
 
 [node name="MainMenu" type="Node"]
 
-[node name="Background" type="TextureRect" parent="."]
-texture_filter = 1
+[node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_7qopn")
-stretch_mode = 1
+color = Color(0.4, 0.227451, 0.517647, 1)
 
 [node name="Button" type="Button" parent="."]
 anchors_preset = 8
@@ -32,5 +29,23 @@ theme_override_fonts/font = ExtResource("2_u3hjt")
 theme_override_font_sizes/font_size = 30
 text = "Начать игру"
 script = ExtResource("3_68dne")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.2
+anchor_right = 0.5
+anchor_bottom = 0.2
+offset_left = -347.0
+offset_top = -72.0
+offset_right = 347.5
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_u3hjt")
+theme_override_font_sizes/font_size = 128
+text = "Ask IT"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
